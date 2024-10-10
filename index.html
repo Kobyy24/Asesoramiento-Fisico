@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<head>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asesoramiento Fisico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="icon" href="logo.png" type="image/png">
+<img src="" alt="">
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        body {
+            font-family: Bebas Neue;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+         
+        }
+
+        .fondo{
+            flex-grow: 1;
+            background:url(https://cdn.discordapp.com/attachments/729214486518431834/1293601905943117824/Diseno_sin_titulo.png?ex=6707f828&is=6706a6a8&hm=15e6da902f028aae8583747eeb54ef8ca03b315c5cf566063b49c567cecec8f2&);
+	        background-size: cover;
+	        padding: 15px 0 0 0;
+
+        }
+        .container {
+  text-align: center;
+  padding: 70px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-top: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50px; /* increased border radius for a more oval shape */
+  position: relative; /* add relative positioning to container */
+}
+
+.container::before {
+  content: url('https://github.com/EricBritezz/LogoMarcos/blob/main/Sin%20t%C3%ADtulo-1.png?raw=true'); /* agrega la imagen PNG */
+  position: absolute;
+  top: -15px; /* ajusta la posición superior para que el logo quede más arriba */
+  left: 50%; /* establece left en 50% para centrar el logo horizontalmente */
+  transform: translateX(-50%); /* ajusta la posición horizontal para centrar el logo */
+  margin: 0; /* elimina el margin */
+  width: 50%; /* ajusta el ancho de la imagen */
+  height: 50%; /* ajusta el alto de la imagen */
+  overflow: hidden; /* agrega esto para recortar la imagen al borde circular */
+  background-color: transparent; /* establece el color de fondo en transparente */
+  padding: 0; /* elimina el padding */
+  filter: drop-shadow(0px 0px 10px rgba(227, 182, 185, 0.689)); /* agrega una sombra al contorno de la imagen */
+}
+h1 {
+  font-family: 'Montserrat', sans-serif; /* Mantengo la familia de fuentes que ya habías seleccionado */
+  font-weight: 900; /* Aumento el peso de la fuente para que sea más ancha y destacada */
+  font-size: 30px; /* Aumento el tamaño de la fuente para que sea más impactante */
+  color: transparent; /* Establezco el color del texto como transparente para aplicar el degradado */
+  background-clip: text; /* Aplico el degradado de colores solo al texto */
+  background-image: linear-gradient(to right, #ffffff, #b9e0e3, #cecece); /* Establezco el degradado de colores llamativos */
+  -webkit-background-clip: text; /* Soporte para Safari y Chrome */
+  -webkit-text-fill-color: transparent; /* Soporte para Safari y Chrome */
+  text-shadow: 2px 2px 4px rgb(255, 255, 255); /* Agrego una sombra del mismo color que el degradado */
+  padding: 20px; /* Mantengo el padding que ya habías establecido */
+}
+
+p {
+  font-weight: 400;
+  color: #aca4df;
+  font-size: 18px;
+  line-height: 1.6;
+  font-family: Montserrat, sans-serif;
+}
+p span {
+  font-weight: bold;
+  color: #333; /* O otro color  */
+  background: linear-gradient(to right, #FFC107, #FF69B4); /* gradient background effect */
+  -webkit-background-clip: text; /* make the gradient background effect only visible behind the text */
+  -webkit-text-fill-color: transparent; /* make the text color transparent to show the gradient background effect */
+}
+        
+
+.whatsapp-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 30px;
+  background-color: #E61822; /* burgundy color */
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out; /* add transition effect */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* add subtle shadow */
+  position: relative; /* add relative positioning for glow effect */
+}
+
+.whatsapp-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FF0033; /* neon bordo color */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.whatsapp-button:hover::before {
+  opacity: 0.5; /* adjust opacity to desired level */
+}
+
+.whatsapp-button:hover {
+  background-color: #400a0c; /* darker burgundy color on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* increase shadow on hover */
+  transform: translateY(-2px); /* add subtle lift effect on hover */
+}
+
+.whatsapp-button:active {
+  background-color: #E61822; /* return to original burgundy color on active */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* return to original shadow on active */
+  transform: translateY(0); /* reset lift effect on active */
+}
+        
+    </style>
+</head>
+<body>
+<div class="fondo">
+    <div class="container">
+        <h1>¿Quien soy y por qué elegirme como tu entrenador personal?</h1>
+        <div class="h2">
+        <p>¡Hola! Soy <span>Marcos Pineda</span>, PROFESOR EN EDUCACIÓN SUPERIOR EN EDUCACIÓN FÍSICA Y PERSONAL TRAINER 
+            CERTIFICADO A través de Athletic Performs, Te voy a ayudar a mejorar tu cuerpo, fuerza, salud y calidad de vida mediante asesorías de entrenamiento <span>+</span> nutricion personalizadas.
+        </p>
+    </div>
+
+        <!-- Botón de WhatsApp -->
+        <a href="https://wa.me/+5493624275537" class="whatsapp-button" target="_blank">
+            Contactar por WhatsApp
+        </a>
+    </div>
+</div>
+</body>
+</html>
