@@ -29,7 +29,7 @@
 
         .fondo{
             flex-grow: 1;
-            background:url(https://cdn.discordapp.com/attachments/729214486518431834/1293601905943117824/Diseno_sin_titulo.png?ex=670949a8&is=6707f828&hm=f4cb8981bbacffab18a8a1133b44de6bd7650f3b333237499f85260ad0c7c582&);
+            background:url(https://github.com/Kobyy24/Asesoramiento-Fisico/blob/main/Fondo.png?raw=true);
 	        background-size: cover;
 	        padding: 15px 0 0 0;
 
@@ -55,13 +55,20 @@
   left: 50%; /* establece left en 50% para centrar el logo horizontalmente */
   transform: translateX(-50%); /* ajusta la posición horizontal para centrar el logo */
   margin: 0; /* elimina el margin */
-  width: 50%; /* ajusta el ancho de la imagen */
-  height: 50%; /* ajusta el alto de la imagen */
-  overflow: hidden; /* agrega esto para recortar la imagen al borde circular */
+  width: 20vw; /* ajusta el ancho de la imagen al 20% del ancho de la ventana */
+  height: auto; /* permite que la altura se ajuste proporcionalmente */
   background-color: transparent; /* establece el color de fondo en transparente */
   padding: 0; /* elimina el padding */
   filter: drop-shadow(0px 0px 10px rgba(227, 182, 185, 0.689)); /* agrega una sombra al contorno de la imagen */
 }
+
+/* Media query para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+  .container::before {
+    width: 35vw; /* aumenta el tamaño de la imagen al 35% del ancho de la pantalla en móviles */
+  }
+}
+
 h1 {
   font-family: 'Montserrat', sans-serif; /* Mantengo la familia de fuentes que ya habías seleccionado */
   font-weight: 900; /* Aumento el peso de la fuente para que sea más ancha y destacada */
