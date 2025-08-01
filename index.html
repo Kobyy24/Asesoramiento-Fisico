@@ -1,175 +1,392 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asesoramiento Físico</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="icon" href="logo.png" type="image/png">
-    <style>
-        body {
-            font-family: 'Bebas Neue', sans-serif;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Athletic Performs - Marcos Pineda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .fondo {
-            flex-grow: 1;
-            background: url(https://github.com/Kobyy24/Asesoramiento-Fisico/blob/main/Fondo.png?raw=true);
-            background-size: cover;
-            padding: 15px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: #000;
+    }
 
-        .container {
-            text-align: center;
-            padding: 70px 30px;
-            background-color: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            max-width: 600px;
-            width: 90%;
-            border: 1px solid rgba(0, 0, 0, 0.2);
-            border-radius: 50px;
-            position: relative;
-        }
+    .fondo {
+      min-height: 100vh;
+      background: linear-gradient(135deg, rgba(20,20,20,0.8), rgba(139,69,79,0.3)), 
+                  url(https://github.com/Kobyy24/Asesoramiento-Fisico/blob/main/Fondo.png?raw=true);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+    }
 
-        .container::before {
-            content: '';
-            position: absolute;
-            top: -146px; /* Ajustado para el nuevo tamaño */
-            left: 50%;
-            transform: translateX(-50%);
-            width: 292px; /* 417px * 0.7 = 292px (30% más pequeño) */
-            height: 292px; /* 417px * 0.7 = 292px (30% más pequeño) */
-            background-image: url('https://github.com/EricBritezz/LogoMarcos/blob/main/Sin%20t%C3%ADtulo-1.png?raw=true');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            filter: drop-shadow(0px 0px 10px rgba(227, 182, 185, 0.689));
-        }
+    .fondo::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, transparent 0%, rgba(139,69,79,0.2) 100%);
+      pointer-events: none;
+    }
 
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 30px;
-            color: transparent;
-            background-clip: text;
-            background-image: linear-gradient(to right, #ffffff, #b9e0e3, #cecece);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 4px rgb(255, 255, 255);
-            padding: 20px;
-            margin-top: 0;
-        }
+    .container {
+      text-align: center;
+      padding: 100px 40px 60px;
+      background: rgba(30, 30, 35, 0.9);
+      backdrop-filter: blur(15px) saturate(180%);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 30px;
+      max-width: 700px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 
+                  inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                  0 0 100px rgba(139,69,79,0.1);
+      animation: containerSlideUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      transform: translateY(50px);
+      opacity: 0;
+      margin-top: 50px;
+    }
 
-        p {
-            font-weight: 400;
-            color: #aca4df;
-            font-size: 18px;
-            line-height: 1.6;
-            font-family: Montserrat, sans-serif;
-        }
+    @keyframes containerSlideUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
 
-        p span {
-            font-weight: bold;
-            color: #333;
-            background: linear-gradient(to right, #FFC107, #FF69B4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    .logo {
+      position: absolute;
+      top: -180px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 360px;
+      height: 360px;
+      background-image: url('https://github.com/EricBritezz/LogoMarcos/blob/main/Sin%20t%C3%ADtulo-1.png?raw=true');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      filter: drop-shadow(0 15px 40px rgba(255, 255, 255, 0.3)) drop-shadow(0 8px 25px rgba(139,69,79,0.5));
+      animation: logoFloat 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+      transform: translateX(-50%) scale(0.8);
+      opacity: 0;
+      z-index: 10;
+    }
 
-        .whatsapp-button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 15px 30px;
-            background-color: #E61822;
-            color: white;
-            font-size: 25px;
-            font-weight: bold;
-            border-radius: 10px;
-            text-decoration: none;
-            transition: background-color 0.3s ease-in-out;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            position: relative;
-        }
+    @keyframes logoFloat {
+      to {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+      }
+    }
 
-        .whatsapp-button::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #FF0033;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            border-radius: 10px;
-        }
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(24px, 5vw, 36px);
+      color: #ffffff;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 2px 10px rgba(139,69,79,0.3);
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+      line-height: 1.2;
+      animation: titleSlide 1s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards;
+      transform: translateY(30px);
+      opacity: 0;
+    }
 
-        .whatsapp-button:hover::before {
-            opacity: 0.5;
-        }
+    @keyframes titleSlide {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
 
-        .whatsapp-button:hover {
-            background-color: #400a0c;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-            transform: translateY(-2px);
-        }
+    .content {
+      animation: contentFade 1s cubic-bezier(0.4, 0, 0.2, 1) 0.9s forwards;
+      opacity: 0;
+    }
 
-        .whatsapp-button:active {
-            background-color: #E61822;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            transform: translateY(0);
-        }
+    @keyframes contentFade {
+      to {
+        opacity: 1;
+      }
+    }
 
-        @media (max-width: 720px) {
-            .container {
-                padding: 50px 20px;
-                border-radius: 30px;
-            }
+    p {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: #f5f5f5;
+      line-height: 1.7;
+      margin-bottom: 40px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
 
-            .container::before {
-                width: 262px; /* 375px * 0.7 = 262px (30% más pequeño) */
-                height: 262px; /* 375px * 0.7 = 262px (30% más pequeño) */
-                top: -131px; /* Ajustado para el nuevo tamaño */
-            }
+    .highlight {
+      color: #b8868b;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
 
-            h1 {
-                font-size: 24px;
-                padding: 10px;
-            }
+    .highlight:hover {
+      color: #d4a5aa;
+      transform: scale(1.05);
+    }
 
-            p {
-                font-size: 16px;
-            }
+    .nombre {
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 1.1em;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
 
-            .whatsapp-button {
-                font-size: 20px;
-                padding: 12px 24px;
-            }
-        }
-    </style>
+    .marca {
+      color: #d4a5aa;
+      font-weight: 800;
+      font-size: 1.1em;
+      text-shadow: 0 0 20px rgba(212, 165, 170, 0.4);
+    }
+
+    .whatsapp-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 18px 36px;
+      background: linear-gradient(135deg, #8b454f, #a8646f);
+      color: white;
+      font-size: clamp(18px, 3vw, 24px);
+      font-weight: 700;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(139, 69, 79, 0.4);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      animation: buttonSlide 1s cubic-bezier(0.4, 0, 0.2, 1) 1.2s forwards;
+      transform: translateY(30px);
+      opacity: 0;
+    }
+
+    @keyframes buttonSlide {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .whatsapp-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.6s;
+    }
+
+    .whatsapp-button:hover::before {
+      left: 100%;
+    }
+
+    .whatsapp-button:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 20px 40px rgba(139, 69, 79, 0.6);
+      border-color: rgba(255, 255, 255, 0.3);
+      background: linear-gradient(135deg, #a8646f, #c4808b);
+    }
+
+    .whatsapp-button:active {
+      transform: translateY(-2px) scale(1.02);
+      transition: all 0.1s;
+    }
+
+    .whatsapp-icon {
+      width: 28px;
+      height: 28px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.051 3.688"/></svg>') center/contain no-repeat;
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-button:hover .whatsapp-icon {
+      transform: rotate(360deg);
+    }
+
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(212, 165, 170, 0.6);
+      border-radius: 50%;
+      animation: float 6s infinite linear;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+          @media (max-width: 768px) {
+      .container {
+        padding: 80px 25px 45px;
+        margin: 10px;
+        margin-top: 40px;
+        border-radius: 25px;
+      }
+
+      .logo {
+        width: 300px;
+        height: 300px;
+        top: -150px;
+      }
+
+      p {
+        margin-bottom: 30px;
+      }
+
+      .whatsapp-button {
+        padding: 15px 30px;
+        font-size: 18px;
+      }
+
+      .whatsapp-icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="fondo">
-        <div class="container">
-            <h1>¿Quién soy y por qué elegirme como tu entrenador personal?</h1>
-            <div class="h2">
-                <p>¡Hola! Soy <span>Marcos Pineda</span>, PROFESOR EN EDUCACIÓN SUPERIOR EN EDUCACIÓN FÍSICA Y PERSONAL TRAINER 
-                    CERTIFICADO A través de Athletic Performs. Te voy a ayudar a mejorar tu cuerpo, fuerza, salud y calidad de vida mediante asesorías de entrenamiento <span>+</span> nutrición personalizadas.
-                </p>
-            </div>
-            <a href="https://wa.me/+5493624275537" class="whatsapp-button" target="_blank">
-                Contactar por WhatsApp
-            </a>
-        </div>
+  <div class="fondo">
+    <div class="particles"></div>
+    <div class="container">
+      <div class="logo"></div>
+      <h1>¿Quién soy y por qué elegirme como tu entrenador personal?</h1>
+      <div class="content">
+        <p>
+          ¡Hola! Soy <span class="nombre">Marcos Pineda</span>, profesor en Educación Superior en Educación Física y entrenador personal certificado.<br><br>
+          A través de <span class="marca">Athletic Performs</span>, voy a ayudarte a <span class="highlight">transformar tu cuerpo</span>, <span class="highlight">aumentar tu fuerza</span>, <span class="highlight">mejorar tu salud</span> y <span class="highlight">elevar tu calidad de vida</span> mediante programas de <strong>entrenamiento</strong> y <strong>nutrición personalizados</strong>.
+        </p>
+        <a href="https://wa.me/+5493624275537?text=%C2%A1Hola%20Marcos!%20Te%20hablo%20por%20el%20link%20de%20tu%20p%C3%A1gina" class="whatsapp-button" target="_blank">
+          <div class="whatsapp-icon"></div>
+          Contactar por WhatsApp
+        </a>
+      </div>
     </div>
+  </div>
+
+  <script>
+    // Crear partículas flotantes
+    function createParticles() {
+      const particlesContainer = document.querySelector('.particles');
+      const particleCount = 15;
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    // Efecto de click en el botón
+    document.querySelector('.whatsapp-button').addEventListener('click', function(e) {
+      const ripple = document.createElement('div');
+      const rect = this.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      const x = e.clientX - rect.left - size / 2;
+      const y = e.clientY - rect.top - size / 2;
+      
+      ripple.style.cssText = `
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.6);
+        transform: scale(0);
+        animation: ripple 0.6s linear;
+        width: ${size}px;
+        height: ${size}px;
+        left: ${x}px;
+        top: ${y}px;
+        pointer-events: none;
+      `;
+      
+      this.appendChild(ripple);
+      
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    });
+
+    // Agregar animación de ripple
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes ripple {
+        to {
+          transform: scale(2);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Inicializar efectos
+    document.addEventListener('DOMContentLoaded', function() {
+      createParticles();
+    });
+
+    // Efecto hover mejorado para elementos highlight
+    document.querySelectorAll('.highlight').forEach(el => {
+      el.addEventListener('mouseenter', function() {
+        this.style.textShadow = '0 0 20px rgba(212, 165, 170, 0.8)';
+      });
+      
+      el.addEventListener('mouseleave', function() {
+        this.style.textShadow = 'none';
+      });
+    });
+  </script>
 </body>
 </html>
